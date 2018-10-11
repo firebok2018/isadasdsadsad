@@ -6,26 +6,31 @@ $(document).ready(function(){
 		$('.delR').val('');
 		
 	})
-	$('#mc').click(function(){
-		$('span').removeClass('menumb')
-		$('span').addClass('wap')
+	$('#mc').click( function () {
+	
+		$('#nav').fadeToggle(ren())
 		
+		$('li').click(function(){
+			
+			ner()
+			
+		})
 		
-		$('#nav').fadeIn(function(){
-			$('li').click(function(){
-				$('#nav').fadeOut()
-				$('span').removeClass('wap')
-				$('span').addClass('menumb')
-			})
-		})
-		$('#mc').click(function(){
-			$('#nav').fadeOut()
-			$('span').removeClass('wap')
-			$('span').addClass('menumb')
-		})
 		
 		
 	})
+	$('.rslink').click(function(){
+		$('#nav').fadeOut()
+	})
+
+})
+
+function ren(){
+	$('span').removeClass('menumb').addClass('wap')
+}
+function ner(){
+	$('span').removeClass('wap').addClass('menumb')
+}
 
 
 });
